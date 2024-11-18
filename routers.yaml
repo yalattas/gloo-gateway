@@ -1,0 +1,100 @@
+resources:
+  - apiVersion: v1
+    kind: Secret
+    type: kubernetes.io/tls
+    metadata:
+      labels:
+        gateway: https
+      name: https-tls
+      namespace: gloo-system
+    data:
+      tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURJekNDQWd1Z0F3SUJBZ0lVWkhmK2ZpcllyM0J3NzRYNURJaDQrQ003eFo0d0RRWUpLb1pJaHZjTkFRRUwKQlFBd0lURVRNQkVHQTFVRUNnd0tZVzU1SUdSdmJXRnBiakVLTUFnR0ExVUVBd3dCS2pBZUZ3MHlOREV4TVRneApNak0wTURkYUZ3MHlOVEV4TVRneE1qTTBNRGRhTUNFeEV6QVJCZ05WQkFvTUNtRnVlU0JrYjIxaGFXNHhDakFJCkJnTlZCQU1NQVNvd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUUNUVFhJU0JmM2UKNG1TTWd0YUJJWllaUy9RcHpJa1BQcW85enZkVURNRksrbVVidHVqbE5Qb2NoemRySDFycytCMldSWGxvY0RHMQpUVmR4RmtBckJwMUovQkYzZXpBOERuWEYwT0w1WlhWa1J2RGNJMWI5SFlkNXQzS1RJUURVRmsxZmVua2hYb1loClBjd1ZLVHlWZ2pWVjZreHdVMUwwbXd5SFhrRUdLamUyamt1Tys5QXVNNzRCMzBNdFNZcmxGSFNaZE9HMnpFV0YKRXI2YnNRVUV1YWlSdWIxbTJ5dWRVQldjVHFKRGlSa2NrWllvMEpNVm1zQndmTTlLcGtvQjg0RmUzL1ZTRWs5Nwpnd2xteS9YWmdhQlZmSUdNemtLTDZjMGx0NlEzSGIyQjFRYVhtNlovYndpUlhlZzAzKy80QXFYbDBhdzV5U2ZSCnF2d2pWWDBOR3pTREFnTUJBQUdqVXpCUk1CMEdBMVVkRGdRV0JCVHdpK3RjYkdEdmM3bDd5bERIa01Ka0VxbTUKL3pBZkJnTlZIU01FR0RBV2dCVHdpK3RjYkdEdmM3bDd5bERIa01Ka0VxbTUvekFQQmdOVkhSTUJBZjhFQlRBRApBUUgvTUEwR0NTcUdTSWIzRFFFQkN3VUFBNElCQVFCVTU5Szd6Tng1NTVSUHdQRVU3VXExS3k3b2RaV2VoT3k4CnRvQmN3cld0dU5aMURUcTR1S3lqbEFodU9QSUwvNFd6NlBHbGt3VlN4TTBsTWFvWEQ4cmkxM2llcm9VQThVa04KQkFmV2V6QTdYQzUvaHI2QWttRUloak5tSmNSREI0TkNoV1JZN1ZYSVF0NHlwemdXZWxYN2tIK0RPa2hZSGtnTwpGNnlwb1JjVVpzSkNXVGNUNGovOTZhS2hIUzZ0WnZobVRnV0tuTWx5QlNFN05uMnNGa1VkTmdYOTU0TU5FaFVFCkdibmZxQURwd2E2Z3ZOQ2RENmlGaGJWYWhweWRTR1RqQmhwb2xyU2hZRUlCZk1KL1RieS9xeVdFM2JrTHp1Z3UKWVFiUTh6QlVLOFlIWE90RkVLYUtxemY3Z0I0RE1SaU11S2lsVzZKR2svaXN6TTlxMFY3UgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      tls.key: LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2d0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktrd2dnU2xBZ0VBQW9JQkFRQ1RUWElTQmYzZTRtU00KZ3RhQklaWVpTL1FweklrUFBxbzl6dmRVRE1GSyttVWJ0dWpsTlBvY2h6ZHJIMXJzK0IyV1JYbG9jREcxVFZkeApGa0FyQnAxSi9CRjNlekE4RG5YRjBPTDVaWFZrUnZEY0kxYjlIWWQ1dDNLVElRRFVGazFmZW5raFhvWWhQY3dWCktUeVZnalZWNmt4d1UxTDBtd3lIWGtFR0tqZTJqa3VPKzlBdU03NEIzME10U1lybEZIU1pkT0cyekVXRkVyNmIKc1FVRXVhaVJ1YjFtMnl1ZFVCV2NUcUpEaVJrY2taWW8wSk1WbXNCd2ZNOUtwa29CODRGZTMvVlNFazk3Z3dsbQp5L1haZ2FCVmZJR016a0tMNmMwbHQ2UTNIYjJCMVFhWG02Wi9id2lSWGVnMDMrLzRBcVhsMGF3NXlTZlJxdndqClZYME5HelNEQWdNQkFBRUNnZ0VBSzJYeldDME12VmlORURyU0VPeUF5UVl3TXdwd1RSNEUwVDREYjI5c21YY0oKUisrTlVVNVk3QVBJaDVhTzF1ZEk3RWVldSs3bUxralJuTjlWMjNkUTZ3WEpiWjdOT0x4MzVXYWtJSjlNUlZXRApUQkJiWmlxSGlneEt4TjlCMjdxUVpETjBzYWlrTXZIK2lUT0RobmI4Mk1tMWFKaWNCYllTckdWUUdnMWhLYmJ6ClNyRzR1Ni9GQmZNSXc2aE5FdVBKSVZLbXRPMDMxS3NmUXZBa3BNQW5GZTVYNm40U2J5R2xoNmQrQzJOeW91Z0QKaFJab3lxOVU1ZmE2QVkya3VNRWp0aForNENOZGNzMWJwUWFBM3ByMVU5VU4wdmt0TmQxeE9tMmYvaG8vRU9xWAoweE0vNVdIRUdhSDE3bXRpb29BK3htUEhmOEhTR0ExRVdOQXVYUStwelFLQmdRREZIbFFvZk4zMWRYRlh3bjN1CldUaTcveVluc3g4YmFEYmpGb1BSU1BNc2ZMVmhxdmJ5WUZtMzdDamhmazhsNVdSREpNenRoajNVWjZJYWwramcKbi9zRGNBS3BLalRNc2h4L2hPNVV1VVQzVmRkdnZ1aVA5RHRlZnNXeVZLSERmTzg0Ym1zcmFqMTN6d0wrdVpUcApPRW9YU250RVA4VVNmRE5NWW5XVzV6Z0daUUtCZ1FDL1RhK0lFT1VoYXJGTmVVeVh4d00yQk8yTWVIOU0zVkdLClFqV283UTJMbVphN3MxT2tRQzBza1h5eTh6bjlVRkhUWG5iTUwraE15SzZWRDFkZFdoK2Y1RGNYTGhMYTNlTXAKWndMb0pLWE0yOWVQNTVlUU9lVmZ0SG90RXVoUEVkWDFWS1NRcjRUMFdDNVViTy9JQVVkYVpMU2RnY2pSK2Vnagptclc4SkdPTXh3S0JnUUN6cVZvQmNSWUpCRnNqSndVS3VrMklwQnpOc0dnWTNkcXhEak5sREgxL3ZjYkFWMGd2ClQveFdNNnhySW1uWFc0WVA0TG5iZ0RCWXFZQkpoczNkOWxLZUpuaDJZUjZ3dDJKY0kvZnFSdGNDTEQ1by9uTVAKeWdaV3NXdFZoK2ZNdXRGNitNRTdWK0RnazFEaWhKbWlIQWtEdzRJb2lZc0F0eTAyWU1OV29EWWpOUUtCZ1FDdQo4cjZhTXNrNG5EZjFYLzdadHRpSzZFck44Y3lKWU1VWEthR2xFTlVZVzZkcmxIM2pjZ1ZlQXRjRldFWXFFUEFqCjJ2bk5sZXBkZmhHYW8rTURyazNKalkyTUYwaUsrK3lvaWxvd0xvT3FLMHFoZ2V3cnE2Ykd0V2dlSEhKekRSNmMKTTRJa0IwQVJyU3NCYm5hQ2RCanE0N29CYVJWY1lhMFlFbjRzeHlKN05RS0JnUUNjL1dJd2pmYjFKQ1VuRzBEagpPRDFYb3hOZFhVQlVMaFh0UEFXTmI5VEI1dU81aXpwTGkvRlk4ZHh5TjJqcGRhOFlxazhJTWZDM2daNDNlUjZzCkpqOUtsaFQ2clpFelh5YXdjRTU2ajh0UWpTMHBJTERZZ1NSejdYaTFtZ3RDWVIwc1JocEJoM0RSN2doSTFLZnYKdStpTms4OFJQYWJTaVV5Y1FLdnBkVVBnbEE9PQotLS0tLUVORCBQUklWQVRFIEtFWS0tLS0tCg==
+  - kind: Gateway
+    apiVersion: gateway.networking.k8s.io/v1
+    metadata:
+      name: http
+    spec:
+      gatewayClassName: gloo-gateway
+      listeners:
+      - protocol: HTTP
+        port: 8080
+        name: http
+        allowedRoutes:
+          namespaces:
+            from: All
+      - name: https
+        port: 8443
+        protocol: HTTPS
+        hostname: "localhost"
+        tls:
+          mode: Terminate
+          certificateRefs:
+            - name: https-tls
+              kind: Secret
+        allowedRoutes:
+          namespaces:
+            from: All
+  - apiVersion: gateway.networking.k8s.io/v1beta1
+    kind: HTTPRoute
+    metadata:
+      name: httpbin
+      namespace: httpbin
+      labels:
+        example: httpbin-route
+    spec:
+      parentRefs:
+      - name: http
+        namespace: gloo-system
+      hostnames:
+        - "localhost1"
+      rules:
+      - backendRefs:
+        - name: httpbin
+          port: 8000
+  - apiVersion: gateway.networking.k8s.io/v1beta1
+    kind: HTTPRoute
+    metadata:
+      name: nginx
+      namespace: default
+    spec:
+      parentRefs:
+      - name: http
+        namespace: gloo-system
+      hostnames:
+        - "localhost1"
+      rules:
+      - backendRefs:
+        - name: nginx-service
+          port: 80
+  - apiVersion: gloo.solo.io/v1
+    kind: Upstream
+    metadata:
+      name: websocket-default-http2
+      namespace: gloo-system
+    spec:
+      static:
+        hosts:
+          - addr: demo.piesocket.com
+            port: 443
+        useTls: true
+  - apiVersion: gateway.solo.io/v1
+    kind: VirtualService
+    metadata:
+      name: websocket-virtualservice
+      namespace: gloo-system
+    spec:
+      virtualHost:
+        domains:
+          - 'localhost'
+        routes:
+          - matchers:
+              - prefix: '/'
+            routeAction:
+              single:
+                upstream:
+                  name: websocket-default-http2
+                  namespace: gloo-system
+            options:
+              websocket: true
+              hostRewrite: demo.piesocket.com

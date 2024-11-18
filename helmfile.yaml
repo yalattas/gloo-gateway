@@ -1,0 +1,33 @@
+
+helmDefaults:
+  verify: false
+  wait: true
+  force: false
+  createNamespace: true
+  cleanupOnFail: true
+
+repositories:
+- name: gloo
+  url: https://storage.googleapis.com/solo-public-helm
+# kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.0/standard-install.yaml
+---
+releases:
+  - name: gloo-gateway
+    chart: gloo/gloo
+    version: 1.17.16
+    namespace: gloo-system
+    disableValidation: true
+    values:
+      - ./values.yaml
+  - name: gloo-objects
+    chart: ./charts/itscontained
+    namespace: gloo-system
+    disableValidation: true
+    values:
+      - ./routers.yaml
+  - name: gloo-demo
+    chart: ./charts/itscontained
+    namespace: gloo-system
+    disableValidation: true
+    values:
+      - ./demo.yaml
